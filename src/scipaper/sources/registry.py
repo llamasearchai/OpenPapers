@@ -5,6 +5,7 @@ from typing import Optional
 from .base_source import BaseSource
 from .implementations.arxiv import ArxivSource
 from .implementations.crossref import CrossrefSource
+from .implementations.googlescholar import GoogleScholarSource
 from .implementations.pubmed import PubMedSource
 from .implementations.semanticscholar import SemanticScholarSource
 from .implementations.xrxiv_local import XrxivLocalSource
@@ -19,9 +20,10 @@ class SourceRegistry:
         """Register all built-in source implementations."""
         self.register("arxiv", ArxivSource)
         self.register("crossref", CrossrefSource)
+        self.register("googlescholar", GoogleScholarSource)
         self.register("pubmed", PubMedSource)
         self.register("semanticscholar", SemanticScholarSource)
-        self.register("xrxiv", XrxivLocalSource)
+        self.register("xrxiv_local", XrxivLocalSource)
 
     def register(self, name: str, source_class: type[BaseSource]):
         """Register a new source class."""
