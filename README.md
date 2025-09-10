@@ -164,6 +164,23 @@ Using docker-compose:
 docker compose up --build
 ```
 
+### OrbStack (macOS) Notes
+
+OrbStack provides a fast local Docker environment on macOS. This project works out-of-the-box:
+
+- Ensure OrbStack is running
+- Build and start with:
+  ```bash
+  docker compose up --build
+  ```
+- API available at `http://localhost:8000` (docs at `/docs`)
+
+For Apple Silicon multi-arch builds with Buildx (supported by OrbStack):
+
+```bash
+docker buildx build --platform linux/amd64,linux/arm64 -t scipaper:latest --load .
+```
+
 ## Configuration
 
 Create a `.env` file with the following variables (leave blank if not used; set required keys before enabling features):

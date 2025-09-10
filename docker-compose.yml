@@ -1,12 +1,31 @@
 version: "3.9"
 services:
   api:
-    build: .
+    build:
+      context: .
+      args:
+        # Override to 3.9-slim/3.10-slim/3.11-slim as needed
+        PYTHON_VERSION: 3.11-slim
     image: scipaper:latest
     env_file: .env
     ports:
       - "8000:8000"
-    volumes:
-      - .:/app
+    # For deterministic container filesystem, avoid mounting source in prod.
+    # Uncomment during local dev for hot-reload:
+    # volumes:
+    #   - .:/app
     command: uvicorn scipaper.main:app --host 0.0.0.0 --port 8000 --reload
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket,sys;s=socket.socket();s.settimeout(2);s.connect(('127.0.0.1',8000));s.close()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1g
+    # OrbStack, Colima, Docker Desktop all supported out of the box
+    # For Apple Silicon multi-arch builds, set buildx platforms at build time
 
