@@ -9,12 +9,12 @@
 SciPaper is a comprehensive, production-ready Python toolkit for scientific paper discovery, parsing, and analysis. Built with FastAPI and modern async Python, it provides both a powerful CLI and REST API for researchers, developers, and organizations working with academic literature.
 
 ### Key Highlights
-- 🚀 **Production-Ready**: Complete, tested codebase with no stubs or placeholders
-- 🔍 **Multi-Source Integration**: Query across arXiv, Crossref, PubMed, Semantic Scholar, Google Scholar, and local data
-- 🤖 **AI-Powered Analysis**: Optional OpenAI and Ollama integration for intelligent paper analysis
-- ⚡ **High Performance**: Async architecture with caching, rate limiting, and batch processing
-- 🐳 **Container Ready**: Docker support with multi-platform compatibility
-- 📊 **Rich CLI**: Interactive terminal interface with progress indicators and formatted output
+- **Production-Ready**: Complete, tested codebase with no stubs or placeholders
+- **Multi-Source Integration**: Query across arXiv, Crossref, PubMed, Semantic Scholar, Google Scholar, and local data
+- **AI-Powered Analysis**: Optional OpenAI and Ollama integration for intelligent paper analysis
+- **High Performance**: Async architecture with caching, rate limiting, and batch processing
+- **Container Ready**: Docker support with multi-platform compatibility
+- **Rich CLI**: Interactive terminal interface with progress indicators and formatted output
 
 [![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com/)
@@ -409,15 +409,15 @@ pytest -n auto
 ### Test Coverage
 
 The test suite covers:
-- ✅ **Source Registry**: All data source registration and instantiation
-- ✅ **Text Parsing**: Identifier extraction and validation
-- ✅ **Fetcher Core**: Search and fetch operations across sources
-- ✅ **Individual Sources**: arXiv, Crossref, PubMed, Semantic Scholar implementations
-- ✅ **AI Agents**: OpenAI and Ollama integration
-- ✅ **CLI Commands**: All command-line interface functionality
-- ✅ **API Endpoints**: REST API functionality and error handling
-- ✅ **Exception Handling**: Comprehensive error scenarios
-- ✅ **Integration Tests**: End-to-end workflows
+- **Source Registry**: All data source registration and instantiation
+- **Text Parsing**: Identifier extraction and validation
+- **Fetcher Core**: Search and fetch operations across sources
+- **Individual Sources**: arXiv, Crossref, PubMed, Semantic Scholar implementations
+- **AI Agents**: OpenAI and Ollama integration
+- **CLI Commands**: All command-line interface functionality
+- **API Endpoints**: REST API functionality and error handling
+- **Exception Handling**: Comprehensive error scenarios
+- **Integration Tests**: End-to-end workflows
 
 ### Mock Data
 

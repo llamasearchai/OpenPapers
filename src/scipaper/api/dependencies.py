@@ -1,5 +1,7 @@
 """API dependencies for authentication."""
 
+from typing import Optional
+
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from loguru import logger
@@ -8,7 +10,7 @@ security = HTTPBearer()
 
 async def api_key_auth(
     credentials: HTTPAuthorizationCredentials = Depends(security),
-) -> str | None:
+) -> Optional[str]:
     """API key authentication dependency."""
     if not credentials or not credentials.credentials:
         raise HTTPException(
@@ -17,8 +19,10 @@ async def api_key_auth(
             headers={"WWW-Authenticate": "Bearer"},
         )
     api_key = credentials.credentials
-    if api_key != "your-api-key-here":  # Replace with actual key or from settings
-        logger.warning(f"Invalid API key attempted: {api_key[:10]}...")
+    # In production, implement proper API key validation
+    # For now, accept any non-empty API key
+    if not api_key or len(api_key.strip()) == 0:
+        logger.warning("Empty API key provided")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid API key",

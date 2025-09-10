@@ -64,12 +64,12 @@ This project adheres to a code of conduct to ensure a welcoming environment for 
 
 We welcome various types of contributions:
 
-- **🐛 Bug fixes**: Fix existing issues
-- **✨ Features**: Add new functionality
-- **📚 Documentation**: Improve docs, tutorials, or examples
-- **🧪 Tests**: Add or improve test coverage
-- **🔧 Tools**: Development tools, CI/CD improvements
-- **🎨 UI/UX**: Improve user interfaces or CLI experience
+- **Bug fixes**: Fix existing issues
+- **Features**: Add new functionality
+- **Documentation**: Improve docs, tutorials, or examples
+- **Tests**: Add or improve test coverage
+- **Tools**: Development tools, CI/CD improvements
+- **UI/UX**: Improve user interfaces or CLI experience
 
 ### Finding Issues to Work On
 
@@ -328,4 +328,4 @@ Contributors will be recognized in:
 - CHANGELOG.md for significant contributions
 - Project documentation
 
-Thank you for contributing to SciPaper! 🚀
+Thank you for contributing to SciPaper!
